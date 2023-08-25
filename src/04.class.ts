@@ -16,7 +16,7 @@ class Person {
 class son extends Person {
     constructor(pub: String,protect: String,pri: String) {
         super(pub,protect,pri)
-        this.pub = pub
+        this.pub = pub  
         this.protect = protect
         // this.pri = pri 不可以使用
     }
