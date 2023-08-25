@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "target": "ES2020", // 设置ts代码编译的目标版本
+    // 定义希望被编译文件所在的目录 默认 ["**/*"]
+    // "include": ["src/**/*"],  // 所有src目录下的文件都是被编译
+    // "extends": "./configs/base", // 定义被继承的配置文件
+    // "files": [
+    //   // 指定需要编译的文件列表
+    //   "03.compile.ts"
+    // ],
+    "outDir": "dist", // 设置编译后文件的所在目录
+    "outFile": "dist/app.js"  // 将所有的文件编译为一个js文件
+  }
+}

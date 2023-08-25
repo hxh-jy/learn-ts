@@ -1,0 +1,1 @@
+let arra: Array<number> =[112,32]
