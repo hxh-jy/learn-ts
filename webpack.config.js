@@ -5,7 +5,11 @@ module.exports = {
         // 关闭压缩
         minimize: false
     },
+    mode: 'development',
     devtool: 'inline-source-map',
+    devServer: {
+      static: './dist',
+    },
     entry: './src/index.ts',
     output: {
         path: path.resolve(__dirname,'dist'),
@@ -27,5 +31,8 @@ module.exports = {
     },
     plugins: [
         new HtmlWebpackPlugin({title: 'learn-typescript'})
-    ]
+    ],
+    optimization: {
+      runtimeChunk: 'single',
+    },
 }
