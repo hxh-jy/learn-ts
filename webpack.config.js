@@ -1,14 +1,12 @@
 const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 module.exports = {
-    optimization: {
-        // 关闭压缩
-        minimize: false
-    },
     mode: 'development',
     devtool: 'inline-source-map',
     devServer: {
-      static: './dist',
+      static: {
+        directory: path.resolve(__dirname,'dist')
+      }
     },
     entry: './src/index.ts',
     output: {
@@ -33,6 +31,6 @@ module.exports = {
         new HtmlWebpackPlugin({title: 'learn-typescript'})
     ],
     optimization: {
-      runtimeChunk: 'single',
+      runtimeChunk: 'single'
     },
 }
