@@ -4,7 +4,9 @@ module.exports = {
     mode: 'development',
     devtool: 'inline-source-map',
     devServer: {
-      static: './dist',
+      static: {
+        directory: path.resolve(__dirname,'dist')
+      }
     },
     entry: './src/index.ts',
     output: {

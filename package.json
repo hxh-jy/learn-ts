@@ -2,10 +2,11 @@
   "name": "learn-ts",
   "version": "1.0.0",
   "main": "03.compile.js",
+  "target": "web",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack",
-    "server": "webpack serve",
+    "start": "webpack serve",
     "watch": "webpack --watch"
   },
   "repository": {
@@ -25,7 +26,6 @@
     "webpack-cli": "^5.1.4"
   },
   "dependencies": {
-    "clean-webpack-plugin": "^4.0.0",
     "html-webpack-plugin": "^5.5.3",
     "ts-loader": "^9.4.4",
     "typescript": "^5.2.2",
