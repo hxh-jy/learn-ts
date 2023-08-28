@@ -16,7 +16,7 @@ class Person {
 class son extends Person {
     constructor(pub: String,protect: String,pri: String) {
         super(pub,protect,pri)
-        this.pub = pub  
+        this.pub = pub
         this.protect = protect
         // this.pri = pri 不可以使用
     }
@@ -25,4 +25,5 @@ let person = new Person('public','protect','private')
 console.log('类实例对象:>>>>',Person.sta)
 console.log('测试实时更新',person.read)
 console.log('测试在对象中修改',
+    '自动更新功能的测试',
         person.pub = 'sdf')

@@ -1,10 +1,6 @@
 const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 module.exports = {
-    optimization: {
-        // 关闭压缩
-        minimize: false
-    },
     mode: 'development',
     devtool: 'inline-source-map',
     devServer: {
@@ -34,5 +30,7 @@ module.exports = {
     ],
     optimization: {
       runtimeChunk: 'single',
+      // 关闭压缩
+      minimize: false
     },
 }
