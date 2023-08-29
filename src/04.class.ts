@@ -34,7 +34,7 @@
  * 继承抽象时的抽象方法必须要实现
  */
 
-console.log('测试抽象类')
+// console.log('测试抽象类')
 
 abstract class Person {
     public name: string
@@ -55,7 +55,7 @@ class Son extends Person {
         this.age = age
     }
     run() {
-        console.log('狗在跑')
+        // console.log('狗在跑')
     }
 }
-console.log('打印son实例,webpack自动更新',new Son('Mr zhao','male',31))
+// console.log('打印son实例,webpack自动更新',new Son('Mr zhao','male',31))

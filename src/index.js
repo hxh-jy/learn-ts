@@ -1,1 +1,1 @@
-import './05.interface'
+import './06.function'

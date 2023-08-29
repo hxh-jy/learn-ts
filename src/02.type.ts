@@ -42,4 +42,4 @@ let tu: [string,number]
 tu = ['dfasf',123]
 
 let len = (<string>str).length
-console.log('以上方式属于类型断言',len)
+// console.log('以上方式属于类型断言',len)
