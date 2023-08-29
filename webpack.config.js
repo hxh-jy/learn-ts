@@ -2,13 +2,14 @@ const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 module.exports = {
     mode: 'development',
+    target: "web",
     devtool: 'inline-source-map',
     devServer: {
       static: {
         directory: path.resolve(__dirname,'dist')
       }
     },
-    entry: './src/index.ts',
+    entry: './src/index.js',
     output: {
         path: path.resolve(__dirname,'dist'),
         filename: "[contenthash].bundle.js",
@@ -28,7 +29,7 @@ module.exports = {
         ]
     },
     plugins: [
-        new HtmlWebpackPlugin({title: 'learn-typescript'})
+        new HtmlWebpackPlugin()
     ],
     optimization: {
       runtimeChunk: 'single',

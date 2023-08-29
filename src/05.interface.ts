@@ -13,5 +13,5 @@ function fn(test: Test) {
     test.sayHello()
 }
 fn({name: '孙悟空',sayHello() {
-    console.log('测试一下而已',this.name)
+    console.log('自动更新成功',this.name)
 }})
