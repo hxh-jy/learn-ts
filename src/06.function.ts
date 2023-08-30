@@ -9,19 +9,19 @@
 function add(num: number): number {
     return num + num  * 2
 }
-console.log('函数的使用',add(2))
+// console.log('函数的使用',add(2))
 
 /**
  * 对象类型的参数
  * 可以通过? 表示可选
  */
 function printCoord(pt: {x: number,y?: number}) {
-    console.log("The coordinate's x value is " + pt.x);
-    console.log("The coordinate's y value is " + pt.y);
+    // console.log("The coordinate's x value is " + pt.x);
+    // console.log("The coordinate's y value is " + pt.y);
 }
 
-console.log('函数的使用',printCoord({x: 2,y: 5}))
-console.log('函数的使用',printCoord({x: 32}))
+// console.log('函数的使用',printCoord({x: 2,y: 5}))
+// console.log('函数的使用',printCoord({x: 32}))
 
 /**
  * 联合类型: 由两种或多种其他类型组成的类型
@@ -31,19 +31,19 @@ console.log('函数的使用',printCoord({x: 32}))
 
 function printId(id: number | string) {
     if (typeof id == 'string') {
-        console.log(id.toUpperCase())
+        // console.log(id.toUpperCase())
     } else {
-        console.log('id的类型',typeof id)
+        // console.log('id的类型',typeof id)
     }
 }
 
 function welcomePeople(x: string[] | string) {
     if (Array.isArray(x)) {
       // Here: 'x' is 'string[]'
-      console.log("Hello, " + x.join(" and "));
+      // console.log("Hello, " + x.join(" and "));
     } else {
       // Here: 'x' is 'string'
-      console.log("Welcome lone traveler " + x);
+      // console.log("Welcome lone traveler " + x);
     }
   }
 
@@ -67,8 +67,8 @@ type Point = {
    
 // Exactly the same as the earlier example
 function printCoor(pt: Point) {
-console.log("The coordinate's x value is " + pt.x);
-console.log("The coordinate's y value is " + pt.y);
+// console.log("The coordinate's x value is " + pt.x);
+// console.log("The coordinate's y value is " + pt.y);
 }
 
 printCoor({ x: 100, y: 100 });
@@ -93,8 +93,60 @@ let per: Personone = {
     age: 31,
     sex: 'male'
 }
-console.log('测试接口',per)
+// console.log('测试接口',per)
 
 /**
- * 类型断言
+ * 泛型函数
+ * 泛型指的是在定义函数、接口或类的时候不预先指定具体的类型
+ * 而在使用的时候指定
+ * 泛型约束
+ *      在使用泛型的时候由于事先不知道它属于哪种类型因此不可以随意操作它的属性或方法
  */
+function createArray<T>(length: number,value: T): Array<T>{
+    let res: T[] = []
+    for (let i = 0;i < length;i ++) {
+        res[i] = value
+    }
+    return res
+}
+// console.log('泛型函数的使用',createArray<string>(3,'泛型测试'))
+
+function swap<T,U>(number: [T,U]): [U, T] {
+    return [number[1],number[0]]
+}
+// console.log('交换输入的元素',swap([32,'adf']))
+
+/**
+ * 泛型约束的例子
+ * 比如下边函数可以约束为只允许传入包含length属性的变量
+ */
+interface lengthwist {
+    length: number
+}
+ function loggingIdentity<T extends lengthwist>(arg: T): T {
+    // console.log('测试泛型的约束',arg.length);
+    return arg;
+}
+loggingIdentity<string>('2345')
+
+/**
+ * 数组和元祖
+ * 数组： 合并了相同类型的对象
+ * 元祖： 合并了不同类型的对象
+ */
+ let tom!: [string, number];
+ tom = ['Jack',18];
+ tom[0] = 'Tom';
+ tom[1] = 25;
+ 
+ tom[0].slice(1);
+ tom[1].toFixed(2);
+ /**
+  * undefined和null属于任何类型的子类型
+  * void 可以代表没有任何返回值的函数
+  * void 不属于任何类型的子类型
+  */
+
+ let u: number = undefined
+ u = 123
+ let v: void
